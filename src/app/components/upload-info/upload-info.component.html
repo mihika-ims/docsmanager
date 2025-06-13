@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Upload</h2>
+    <hr>
+    <img src="/assets/bill.png" class="img" />
+
+    <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+        <label for="filetype">Filetype</label>
+        <select id="filetype">
+            <option value="invoice">Invoice</option>
+            <option value="bill">Bill</option>
+        </select>
+
+        <label for="filename">Filename</label>
+        <input type="text" id="filename" formControlName="filename" placeholder="Enter your filename"
+            [class.invalid]="hasError('filename')" />
+        <div *ngIf="hasError('filename')" class="error-text">
+            Filename is required.
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input id="multipage" type="checkbox" [(ngModel)]="multipage" />
+            Upload Multipage Invoices
+        </div>
+
+        <div class="button-row">
+            <button class="continue-btn" (click)="onCancel()">Cancel</button>
+            <button class="continue-btn" (click)="onUpload()">Upload</button>
+        </div>
+
+    </form>
+</div>
+<div class="overlay" *ngIf="showOverlay">
+    <div class="popup">
+        <h3>Upload Successful!</h3>
+        <p>Your image has been uploaded successfully</p>
+        <button class="popup-btn" (click)="closeOverlay()">OK</button>
+    </div>
+</div>

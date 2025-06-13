@@ -1,0 +1,36 @@
+.html {
+    background-color: #294898;
+}
+
+.intro-container {
+    background-color: #294898;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.docs-text {
+    font-size: 55px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.manager-text {
+    font-size: 55px;
+    font-weight: 300;
+    color: #90B4E8;
+    margin: 0;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Register</h2>
+    <hr>
+    <img src="/assets/register.png" class="img" />
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        
+        <label for="serverName">Server Name</label>
+        <input type="text" id="serverName" formControlName="serverName" placeholder="Enter your Server Name" 
+        [class.invalid]="hasError('serverName')" />
+        <div *ngIf="hasError('serverName')" class="error-text">
+            serverName is required.
+        </div>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" placeholder="Enter your Username"
+            [class.invalid]="hasError('username')" />
+        <div *ngIf="hasError('username')" class="error-text">
+            Username is required.
+        </div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your Password"
+            [class.invalid]="hasError('password')" />
+        <div *ngIf="hasError('password')" class="error-text">
+            Password is required.
+        </div>
+
+        <br>
+        <button type="submit" class="continue-btn" (click)="onSubmit()">Continue</button>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>My Upload</h2>
+    <hr>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search here..." [(ngModel)]="searchText" />
+        <button class="filter-btn">
+            <img src="assets/upload.svg"  />
+        </button>
+    </div>
+
+    <div class="tabs">
+        <div class="tab" [class.active]="activeTab === 'recent'" (click)="setTab('recent')">
+            Recent Upload
+        </div>
+        <div class="tab" [class.active]="activeTab === 'history'" (click)="setTab('history')">
+            Upload History
+        </div>
+    </div>
+
+    <div *ngIf="activeTab === 'recent'|| activeTab === 'history'">
+        <div class="upload-card" *ngFor="let item of filteredUploads">
+            <img [src]="item.imageUrl" alt="Upload" class="upload-img" />
+            <div class="upload-info">
+                <div class="upload-title">{{ item.title }}</div>
+                <div class="upload-date">{{ item.date }}</div>
+                <div class="upload-user">{{ item.user }}</div>
+            </div>
+            <button class="delete-btn" (click)="deleteUpload(item.id)">
+                <img src="/assets/del.svg"  />
+            </button>
+        </div>
+    </div>
+
+</div>
+<app-bottom-nav></app-bottom-nav>

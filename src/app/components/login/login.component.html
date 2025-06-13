@@ -1,0 +1,22 @@
+<div class="container">
+  <img src="/assets/logo1.png" class="img" />
+  <div class="title"><h2 class="docs-text">DOCS Manager</h2></div>
+  <p>LOGIN</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" placeholder="Enter your Username" [class.invalid]="hasError('username')"/>
+    <div *ngIf="hasError('username')" class="error-text">
+      Username is required.
+    </div>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" placeholder="Enter your Password" [class.invalid]="hasError('password')" />
+    <div *ngIf="hasError('password')" class="error-text">
+      Password is required.
+    </div>
+
+    <button type="submit" class="continue-btn">Continue</button>
+  </form>
+</div>

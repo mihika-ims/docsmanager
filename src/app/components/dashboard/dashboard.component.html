@@ -1,0 +1,25 @@
+<div class="overlay" *ngIf="showPopup">
+  <div class="popup">
+    <h3>Welcome to DOCS Manager</h3>
+    <p>Your secure hub for uploading, managing, and attaching documents with ease.</p>
+    <button class="popup-btn" (click)="closePopup()">Continue</button>
+  </div>
+</div>
+<div class="container">
+    <h2>Dashboard</h2>
+  <hr/><br>
+  <div class="company-card">
+    <div class="company-name">{{ companyName }}</div>
+    <div class="login-date">Login Date : {{ loginDate }}</div>
+  </div>
+  <div class="action-card"  routerLink="/attach-docs">
+    <img src="/assets/attach.svg" class="icon"/>
+    <h4>Attach Document</h4>
+  </div>
+  <br>
+  <div class="action-card" routerLink="/uploads">
+    <img src="/assets/upload.svg" class="icon"/>
+    <h4>My Upload</h4>
+  </div>
+</div>
+<app-bottom-nav></app-bottom-nav>
