@@ -1,0 +1,18 @@
+.otp-boxes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  border :1 rem;
+}
+
+.otp-boxes input {
+  width: 53px;
+  height: 68px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  position: relative;
+}

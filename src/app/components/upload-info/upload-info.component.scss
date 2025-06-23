@@ -55,7 +55,11 @@ p {
   margin-top: 1rem;
   cursor: pointer;
 
-  &:hover {
-    background-color: darken(#1a3d8f, 10%);
-  }
+
+}
+.img {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 1rem;
+
 }

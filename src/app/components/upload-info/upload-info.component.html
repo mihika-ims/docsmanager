@@ -1,7 +1,9 @@
 <div class="container">
     <h2>Upload</h2>
     <hr>
-    <img src="/assets/bill.png" class="img" />
+    <img *ngIf="capturedImage?.imageAsDataUrl" [src]="capturedImage?.imageAsDataUrl" class="img" alt="Captured Image" />
+    <p *ngIf="!capturedImage || !capturedImage.imageAsDataUrl">Image not available or invalid.</p>
+
 
     <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
         <label for="filetype">Filetype</label>
@@ -18,9 +20,9 @@
         </div>
 
         <div class="form-group checkbox-group">
-            <input id="multipage" type="checkbox" [(ngModel)]="multipage" />
-            Upload Multipage Invoices
-        </div>
+    <input id="multipage" type="checkbox" formControlName="multipage" />
+    Upload Multipage Invoices
+</div>
 
         <div class="button-row">
             <button class="continue-btn" (click)="onCancel()">Cancel</button>

@@ -1,32 +1,46 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { WebcamImage } from 'ngx-webcam';
+import { CapturedimgService } from '../../service/capturedimg.service';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-upload-info',
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  standalone: true,
   templateUrl: './upload-info.component.html',
   styleUrl: './upload-info.component.scss'
 })
-export class UploadInfoComponent {
 
-uploadForm: FormGroup;
-multipage: boolean = false;
-showOverlay = false;
+export class UploadInfoComponent implements OnInit {
+  capturedImage?: WebcamImage;
+  multipage = false;
+  showOverlay = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.uploadForm = this.fb.group({
-      filename: ['', Validators.required],
-    });
+  uploadForm = new FormGroup({
+  filename: new FormControl('', Validators.required),
+  multipage: new FormControl(false),
+  filetype: new FormControl('invoice'),
+});
+
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private CapturedimgService: CapturedimgService,
+    private cdr: ChangeDetectorRef
+  ) { }
+
+  ngOnInit(): void {
+    this.capturedImage = this.CapturedimgService.getImage();
+   
+    this.cdr.detectChanges();
   }
 
   hasError(controlName: string): boolean {
     const control = this.uploadForm.get(controlName);
-    return control?.touched && control.invalid || false;
-  }
- onCancel() {
-    this.uploadForm.reset();
+    return !!(control && control.invalid && (control.dirty || control.touched));
   }
 
   onUpload() {
@@ -36,10 +50,13 @@ showOverlay = false;
     }
     this.showOverlay = true;
   }
-   closeOverlay() {
+
+  closeOverlay() {
     this.showOverlay = false;
     this.router.navigate(['/my-invoice']);
   }
 
-
+  onCancel() {
+    this.router.navigate(['/dashboard']);
+  }
 }

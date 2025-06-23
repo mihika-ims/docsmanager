@@ -1,0 +1,9 @@
+<div class="container">
+    <img *ngIf="capturedImage?.imageAsDataUrl" [src]="capturedImage?.imageAsDataUrl" class="img" alt="Captured Image" />
+
+    <div class="botnavbar">
+        <button (click)="onBackClick()">Back</button>
+        <button (click)="onContinueClick()">Continue</button>
+    </div>
+
+</div>

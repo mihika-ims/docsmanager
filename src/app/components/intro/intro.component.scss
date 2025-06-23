@@ -1,7 +1,10 @@
-.html {
+html {
     background-color: #294898;
+    margin: 0;
 }
-
+body {
+  margin: 0;
+}
 .intro-container {
     background-color: #294898;
     display: flex;
@@ -13,6 +16,9 @@
     height: 100vh;
     width: 100vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:none;
+    overflow-y: none;
+    overflow-x: none;
 }
 
 .logo {

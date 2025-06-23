@@ -1,0 +1,4 @@
+<div class="camera-fullscreen">
+  <webcam [trigger]="triggerObservable$" (imageCapture)="handleImage($event)" [videoOptions]="{ facingMode: 'environment' }"class="webcam-feed"></webcam>
+  <button class="capture-btn" (click)="triggerSnapshot()"></button>
+</div>
