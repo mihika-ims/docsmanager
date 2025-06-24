@@ -1,10 +1,15 @@
 html {
     margin: 0;
 }
+
 body {
-  margin: 0;
+    margin: 0;
 }
+
 .container {
+    overflow: hidden;
+    overflow-x: none;
+    overflow-y: none;
     max-width: 400px;
     margin: 16px auto;
     padding: 16px;
@@ -43,7 +48,8 @@ body {
             margin-bottom: 0.25rem;
         }
 
-        input, select {
+        input,
+        select {
             padding: 0.8rem;
             border: 1px solid #ccc;
             border-radius: 8px;

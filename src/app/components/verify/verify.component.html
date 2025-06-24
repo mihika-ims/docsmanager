@@ -6,14 +6,17 @@
   <h3>OTP Verification</h3>
   <p>Enter the verification code we just sent to your registered email</p>
 
-  <div [formGroup]="otpForm" class="otp-boxes">
-  <input type="text" formControlName="digit1" maxlength="1" (input)="autoFocusNext(0)" />
-  <input type="text" formControlName="digit2" maxlength="1" (input)="autoFocusNext(1)" />
-  <input type="text" formControlName="digit3" maxlength="1" (input)="autoFocusNext(2)" />
-  <input type="text" formControlName="digit4" maxlength="1" (input)="autoFocusNext(3)" />
-  <input type="text" formControlName="digit5" maxlength="1" (input)="autoFocusNext(4)" />
-  <input type="text" formControlName="digit6" maxlength="1" (input)="autoFocusNext(5)" />
-</div>
+  <div  [formGroup]="otpForm" class="otp">
+    <div class="otp-boxes">
+      <input type="text" formControlName="digit1" maxlength="1" (input)="autoFocusNext(0)" />
+      <input type="text" formControlName="digit2" maxlength="1" (input)="autoFocusNext(1)" />
+      <input type="text" formControlName="digit3" maxlength="1" (input)="autoFocusNext(2)" />
+      <input type="text" formControlName="digit4" maxlength="1" (input)="autoFocusNext(3)" />
+      <input type="text" formControlName="digit5" maxlength="1" (input)="autoFocusNext(4)" />
+      <input type="text" formControlName="digit6" maxlength="1" (input)="autoFocusNext(5)" />
+    </div>
+
+  </div>
 
 
   <p class="resend-text">Didn’t receive code? <span class="resend-link">RESEND</span></p>

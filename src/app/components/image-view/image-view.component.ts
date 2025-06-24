@@ -21,11 +21,11 @@ export class ImageViewComponent {
     this.capturedImage = this.CapturedimgService.getImage();
 
   }
-   onBackClick() {
-    this.router.navigate(['/camera']); 
+  onBackClick() {
+    this.router.navigate(['/camera']);
   }
 
   onContinueClick() {
-    this.router.navigate(['/upload-info']); 
+    this.router.navigate(['/upload-info']);
   }
 }

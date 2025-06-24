@@ -19,10 +19,10 @@ export class UploadInfoComponent implements OnInit {
   showOverlay = false;
 
   uploadForm = new FormGroup({
-  filename: new FormControl('', Validators.required),
-  multipage: new FormControl(false),
-  filetype: new FormControl('invoice'),
-});
+    filename: new FormControl('', Validators.required),
+    multipage: new FormControl(false),
+    filetype: new FormControl('invoice'),
+  });
 
 
   constructor(
@@ -34,7 +34,6 @@ export class UploadInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.capturedImage = this.CapturedimgService.getImage();
-   
     this.cdr.detectChanges();
   }
 
@@ -58,5 +57,8 @@ export class UploadInfoComponent implements OnInit {
 
   onCancel() {
     this.router.navigate(['/dashboard']);
+  }
+  onAddMore() {
+    this.router.navigate(['/camera']);
   }
 }

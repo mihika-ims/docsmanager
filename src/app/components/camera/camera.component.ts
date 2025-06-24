@@ -8,7 +8,7 @@ import { CapturedimgService } from '../../service/capturedimg.service';
 @Component({
   selector: 'app-camera',
   standalone: true,
-  imports: [WebcamModule, CommonModule,RouterModule],
+  imports: [WebcamModule, CommonModule, RouterModule],
   templateUrl: './camera.component.html',
   styleUrls: ['./camera.component.scss']
 })
@@ -16,16 +16,14 @@ export class CameraComponent {
   private trigger = new Subject<void>();
   triggerObservable$ = this.trigger.asObservable();
 
-  constructor(private router: Router, private CapturedimgService: CapturedimgService) {}
+  constructor(private router: Router, private CapturedimgService: CapturedimgService) { }
 
   triggerSnapshot() {
     this.trigger.next();
   }
-
   handleImage(webcamImage: WebcamImage) {
     this.CapturedimgService.setImage(webcamImage);
     this.router.navigate(['/image-view']);
   }
-
-
+  
 }

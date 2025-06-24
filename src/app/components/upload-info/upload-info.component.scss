@@ -1,17 +1,18 @@
 .button-row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex: 1;
-    padding: 12px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  padding: 12px 0;
 }
 
 .continue-btn {
-    width: 100%;
-    padding: 12px 0;
+  width: 100%;
+  padding: 12px 0;
 }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -30,7 +31,7 @@
   background: #fff;
   padding: 2rem;
   border-radius: 8px;
-  width: 70%;
+  width: 60%;
   max-width: 300px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -42,7 +43,7 @@
 p {
   color: #555;
   font-size: 0.8rem;
-  text-align: justify;
+  text-align: center;
 }
 
 .popup-btn {
@@ -57,9 +58,23 @@ p {
 
 
 }
+
 .img {
   width: 100%;
   max-width: 350px;
   margin-bottom: 1rem;
 
+}
+
+.add-more-btn {
+  color: #1a3d8f;
+  border: none;
+  background-color: transparent;
+
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
